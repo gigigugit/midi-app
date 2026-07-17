@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDI App Starter</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>MIDI Generator</h1>
+        <p>Create a Standard MIDI File in the Python backend and download it locally.</p>
+
+        <form id="midi-form">
+          <label>
+            Tempo (BPM)
+            <input id="tempo_bpm" name="tempo_bpm" type="number" min="20" max="300" value="120" />
+          </label>
+
+          <label>
+            Instrument (MIDI program)
+            <input id="instrument" name="instrument" type="number" min="0" max="127" value="0" />
+          </label>
+
+          <label>
+            Notes (CSV MIDI note numbers)
+            <input
+              id="notes"
+              name="notes"
+              type="text"
+              value="60,62,64,65,67,69,71,72"
+            />
+          </label>
+
+          <label>
+            Ticks per note
+            <input
+              id="ticks_per_note"
+              name="ticks_per_note"
+              type="number"
+              min="1"
+              max="3840"
+              value="480"
+            />
+          </label>
+
+          <label>
+            Velocity
+            <input id="velocity" name="velocity" type="number" min="1" max="127" value="90" />
+          </label>
+
+          <button type="submit">Generate MIDI</button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite">Ready.</p>
+      </section>
+
+      <section class="card">
+        <h2>Future preview hook</h2>
+        <p>
+          Placeholder for a future Tone.js preview panel. Keep this section when wiring up browser
+          playback later.
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
